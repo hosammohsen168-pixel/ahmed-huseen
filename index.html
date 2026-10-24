@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>وائل محمد عامر</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Cairo,sans-serif;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+color:white;
+}
+
+.card{
+width:90%;
+max-width:400px;
+background:#111827;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid gold;
+}
+
+img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid gold;
+}
+
+h1{
+color:gold;
+margin:15px 0 5px;
+}
+
+p{
+color:#ddd;
+line-height:1.8;
+}
+
+.btn{
+display:block;
+text-decoration:none;
+margin:10px 0;
+padding:14px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.call{background:#1f2937;color:white;}
+.whatsapp{background:#25D366;color:white;}
+.maps{background:#374151;color:white;}
+.save{background:gold;color:black;border:none;width:100%;}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<img src="https://xatimg.com/image/EBabsreoHY1h.png" alt="Profile">
+
+<h1>وائل محمد عامر</h1>
+
+<p>
+مدير إدارة اللوجيستك والترويج البيعي<br>
+شركة فريدال للصناعات العطرية
+</p>
+
+<a class="btn call" href="tel:01122263367">
+📞 اتصال مباشر
+</a>
+
+<a class="btn whatsapp" href="https://wa.me/201122263367">
+💬 واتساب
+</a>
+
+<a class="btn maps"
+href="https://maps.google.com/?q=شركة+فريدال+للصناعات+العطرية">
+📍 موقع الشركة
+</a>
+
+<button class="btn save" onclick="saveContact()">
+➕ احفظ رقمي في هاتفك
+</button>
+
+</div>
+
+<script>
+function saveContact(){
+
+const vCard=`BEGIN:VCARD
+VERSION:3.0
+FN:وائل محمد عامر
+TITLE:مدير إدارة اللوجيستك والترويج البيعي
+TEL;TYPE=CELL:01122263367
+EMAIL:wael.mohammed@fridalegypt.com
+END:VCARD`;
+
+const blob=new Blob([vCard],{type:"text/vcard"});
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+link.download="Wael_Mohamed_Amer.vcf";
+link.click();
+}
+</script>
+
+</body>
+</html>
+``
