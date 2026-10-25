@@ -1,120 +1,276 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>وائل محمد عامر</title>
+<title>أحمد محمد حسين | بطاقة أعمال رقمية</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
-body{
+
+*{
 margin:0;
-font-family:Cairo,sans-serif;
-background:#0f172a;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-color:white;
+padding:20px;
+background:
+linear-gradient(135deg,#05070d,#0f1728,#121d33);
 }
 
 .card{
-width:90%;
-max-width:400px;
-background:#111827;
-padding:25px;
-border-radius:20px;
+width:100%;
+max-width:430px;
+background:rgba(255,255,255,0.04);
+backdrop-filter:blur(15px);
+border:1px solid rgba(212,175,55,.25);
+border-radius:30px;
+padding:30px 22px;
 text-align:center;
-border:1px solid gold;
+box-shadow:
+0 0 20px rgba(212,175,55,.15),
+0 0 70px rgba(212,175,55,.06);
+animation:fadeIn .8s ease;
 }
 
-img{
-width:130px;
-height:130px;
+.profile{
+position:relative;
+display:inline-block;
+}
+
+.profile img{
+width:150px;
+height:150px;
 border-radius:50%;
 object-fit:cover;
-border:3px solid gold;
+border:4px solid #d4af37;
+box-shadow:
+0 0 15px #d4af37,
+0 0 35px rgba(212,175,55,.6);
 }
 
-h1{
-color:gold;
-margin:15px 0 5px;
+.name{
+color:#fff;
+font-size:28px;
+font-weight:800;
+margin-top:15px;
 }
 
-p{
-color:#ddd;
+.job{
+margin-top:8px;
+color:#d4af37;
+font-size:16px;
+font-weight:700;
 line-height:1.8;
 }
 
-.btn{
-display:block;
-text-decoration:none;
-margin:10px 0;
-padding:14px;
-border-radius:10px;
-font-weight:bold;
+.bio{
+margin-top:15px;
+color:#d7d7d7;
+font-size:14px;
+line-height:1.9;
 }
 
-.call{background:#1f2937;color:white;}
-.whatsapp{background:#25D366;color:white;}
-.maps{background:#374151;color:white;}
-.save{background:gold;color:black;border:none;width:100%;}
+.save-btn{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:none;
+border-radius:16px;
+font-size:17px;
+font-weight:800;
+cursor:pointer;
+background:linear-gradient(45deg,#d4af37,#ffd700);
+color:#111;
+transition:.3s;
+}
+
+.save-btn:hover{
+transform:translateY(-3px);
+}
+
+.actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:18px;
+}
+
+.action{
+text-decoration:none;
+background:#172135;
+color:#fff;
+padding:16px;
+border-radius:16px;
+transition:.3s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.action:hover{
+background:#d4af37;
+color:#000;
+transform:translateY(-3px);
+}
+
+.action i{
+display:block;
+font-size:23px;
+margin-bottom:8px;
+}
+
+.social{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:22px;
+}
+
+.social a{
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+background:#172135;
+color:#d4af37;
+font-size:22px;
+transition:.3s;
+}
+
+.social a:hover{
+background:#d4af37;
+color:#000;
+transform:scale(1.1);
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+color:#999;
+}
+
+.modal{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:#111a2d;
+padding:25px;
+border-radius:25px;
+text-align:center;
+border:1px solid #d4af37;
+}
+
+.modal-content h3{
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.close-btn{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#d4af37;
+font-weight:bold;
+cursor:pointer;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="card">
 
-<img src="https://xatimg.com/image/EBabsreoHY1h.png" alt="Profile">
+<div class="profile">
+<img src="https://xatimg.com/image/z6qvr17ILdbX.png" alt="Ahmed Hussein">
+</div>
 
-<h1>وائل محمد عامر</h1>
+<h1 class="name">أحمد محمد حسين</h1>
 
-<p>
-مدير إدارة اللوجيستك والترويج البيعي<br>
+<div class="job">
+نائب مدير إدارة اللوجيستك<br>
 شركة فريدال للصناعات العطرية
-</p>
+</div>
 
-<a class="btn call" href="tel:01122263367">
-📞 اتصال مباشر
-</a>
+<div class="bio">
+متخصص في إدارة الخدمات اللوجستية وسلاسل الإمداد
+وتحسين العمليات التشغيلية لتحقيق أعلى مستويات الكفاءة والجودة.
+</div>
 
-<a class="btn whatsapp" href="https://wa.me/201122263367">
-💬 واتساب
-</a>
-
-<a class="btn maps"
-href="https://maps.google.com/?q=شركة+فريدال+للصناعات+العطرية">
-📍 موقع الشركة
-</a>
-
-<button class="btn save" onclick="saveContact()">
+<button class="save-btn" onclick="downloadContact()">
 ➕ احفظ رقمي في هاتفك
 </button>
 
+<div class="actions">
+
+<a class="action" href="tel:01015153365">
+<i class="fas fa-phone"></i>
+اتصال
+</a>
+
+<a class="action" href="https://wa.me/201015153365" target="_blank">
+<i class="fab fa-whatsapp"></i>
+واتساب
+</a>
+
+<a class="action" href="https://maps.google.com/?q=المنطقة+الصناعية+الثانية+شركة+فريدال" target="_blank">
+<i class="fas fa-location-dot"></i>
+الموقع
+</a>
+
+<a class="action" href="#" onclick="openQR()">
+<i class="fas fa-qrcode"></i>
+QR Code
+</a>
+
 </div>
 
-<script>
-function saveContact(){
+<div class="social">
 
-const vCard=`BEGIN:VCARD
-VERSION:3.0
-FN:وائل محمد عامر
-TITLE:مدير إدارة اللوجيستك والترويج البيعي
-TEL;TYPE=CELL:01122263367
-EMAIL:wael.mohammed@fridalegypt.com
-END:VCARD`;
+<a href="#" title="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-const blob=new Blob([vCard],{type:"text/vcard"});
-const link=document.createElement("a");
+<a href="#" title="LinkedIn">
+<i class="fab fa-linkedin-in"></i>
+</a>
 
-link.href=URL.createObjectURL(blob);
-link.download="Wael_Mohamed_Amer.vcf";
-link.click();
-}
-</script>
-
-</body>
-</html>
-``
+<a href="#"
